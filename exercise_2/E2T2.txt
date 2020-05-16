@@ -1,0 +1,25 @@
+## Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
+
+The IAM policy is not restrictive, allowing full administrative access.
+The Loadbalancer does not redirect HTTP to HTTPS requests.
+There's no IAM password policy
+CloudTrail Trail is not specified.
+S3 bucket logging not enabled.
+VPC Security Groups allow all ingress and egress traffic.
+There's direct access from the public internet to the application listening on port 5000
+Logging is not enabled for the S3 buckets
+
+## Recommendations to remediate the vulnerabilities.
+
+Set IAM policy to readonly.
+Enable MFA for root access.
+Have a strong IAM password policy.
+Limit traffic on the Loadbalancer.
+Disable unnecessary port access to the EC2 instance.
+Enable logging for S3 buckets.
+Traffic should only be allowed from security groups.
+Create a CloudTrail that is stored on S3.
+
+
+
+

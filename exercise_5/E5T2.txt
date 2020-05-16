@@ -1,0 +1,11 @@
+## Identify tools that will allow you to do the following and example compliance violation
+
+    a. Scan infrastructure as code templates.
+        - Terrascan
+            * Use of SSL/TLS and proper configuration
+    b. Scan AMI’s or containers for OS vulnerabilities.
+        - AquaSec 
+            * CVE vulnerabilities
+    c. Scan an AWS environment for cloud configuration vulnerabilities.
+        - AWS SecurityHub
+            * S3 buckets with public write or read permissions

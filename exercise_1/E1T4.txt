@@ -1,0 +1,9 @@
+# Poor practice 1
+The Web Service Instance is in the public subnet, has port 5000 open to the internet, and no HTTPS port 443 open.
+Instead, the instance should be in the private subnet in order not to be exposed to the internet, use port 443 instead of port 80, and only allow communication on port 5000 from the AppLoadBalancerSG.
+The DefaultPrivateRoute1 and DefaultPrivateRoute2 tables have DestinationCidrBlock: 0.0.0.0/0 (Internet)
+That means if a resource within the private subnets gets under malicious control, it could communicate with any endpoint on the internet.
+
+# Poor practice 2
+The InstanceRolePolicy-C3 for the IAM InstanceRole allows for S3 actions on any resource.
+That means the IAM role could be used to access and change content in any S3 bucket in the AWS account.
